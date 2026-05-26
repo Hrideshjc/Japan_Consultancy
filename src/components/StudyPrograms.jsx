@@ -5,7 +5,7 @@ import { img } from 'framer-motion/client'
 import undergraduate from '../assets/undergraduate.jpg';
 import Female from '../assets/female.webp';
 import language from '../assets/language.jpg';
-import ideacollege from '../assets/ideacollege.jpg';
+import IdeaCollege from '../assets/IdeaCollege.jpg';
 const programs = [
   {
     id: 'undergraduate',
@@ -61,7 +61,7 @@ const programs = [
       'Japan\'s vocational colleges offer hands-on, industry-aligned training in creative and technical fields — the fastest route from study to employment in Japan.',
     fields: ['Anime & Manga', 'Culinary Arts', 'Fashion', 'IT & Gaming', 'Tourism'],
     accent: '#0e7490',
-    image: ideacollege,
+    image: IdeaCollege,
   },
 ]
 
