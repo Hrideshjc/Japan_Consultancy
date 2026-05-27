@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { GiFlowerEmblem } from 'react-icons/gi';
 
 const TESTIMONIALS = [
   [
@@ -53,51 +54,48 @@ const TESTIMONIALS = [
 
 function TestimonialCard({ item, index }) {
   return (
-    
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
       className="group relative flex flex-col justify-between bg-white border border-gray-100 p-7 sm:p-8 hover:shadow-xl transition-all duration-300"
     >
-      {/* red top line slides in on hover */}
-      <span className="absolute top-0 left-0 h-[3px] w-0 bg-[#BC002D] group-hover:w-full transition-all duration-300" />
+      {/* blue top line slides in on hover */}
+      <span className="absolute top-0 left-0 h-[3px] w-0 bg-[#0877BA] group-hover:w-full transition-all duration-300" />
 
-
-      {/* big quote mark in container bg bottom right */}
+      {/* big quote mark */}
       <div
         className="absolute bottom-4 right-5 text-[72px] font-black leading-none select-none pointer-events-none"
-        style={{ color: '#BC002D', opacity: 0.06, fontFamily: 'Georgia, serif' }}
+        style={{ color: '#0877BA', opacity: 0.06, fontFamily: "'Roboto', sans-serif" }}
       >
         "
       </div>
 
-       {/* left red stripe */}
-      <div className="absolute left-0 top-0 h-full w-1 bg-[#BC002D]" />
+      {/* left blue stripe */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-[#0877BA]" />
 
       {/* quote */}
-      <p className="text-gray-500 text-[14px] leading-[1.8] mb-8 relative z-10">
+      <p className="text-gray-500 text-[14px] leading-[1.8] mb-8 relative z-10" style={{ fontFamily: "'Roboto', sans-serif" }}>
         {item.quote}
       </p>
 
       {/* author row */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          {/* avatar */}
           <div
             className="w-11 h-11 rounded-full flex items-center justify-center text-white font-black text-[12px] flex-shrink-0"
-            style={{ background: 'linear-gradient(135deg, #BC002D, #7a001c)' }}
+            style={{ background: 'linear-gradient(135deg, #0877BA, #055a8c)', fontFamily: "'Roboto', sans-serif" }}
           >
             {item.avatar}
           </div>
           <div>
-            <div className="text-[#0A0A0A] font-black text-[14px] leading-tight">{item.name}</div>
-            <div className="text-gray-400 text-[12px] mt-0.5">{item.role}</div>
-            <div className="text-[#BC002D] text-[11px] font-semibold mt-0.5">{item.uni}</div>
+            <div className="text-[#0A0A0A] font-black text-[14px] leading-tight" style={{ fontFamily: "'Roboto', sans-serif" }}>{item.name}</div>
+            <div className="text-gray-400 text-[12px] mt-0.5" style={{ fontFamily: "'Roboto', sans-serif" }}>{item.role}</div>
+            <div className="text-[#0877BA] text-[11px] font-semibold mt-0.5" style={{ fontFamily: "'Roboto', sans-serif" }}>{item.uni}</div>
           </div>
         </div>
         {/* stars */}
-        <div className="text-[#BC002D] text-[12px] hidden sm:block">★★★★★</div>
+        <div className="text-[#F6C21F] text-[12px] hidden sm:block">★★★★★</div>
       </div>
     </motion.div>
   );
@@ -107,7 +105,6 @@ export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const total = TESTIMONIALS.length;
 
-  // auto-advance every 6s
   useEffect(() => {
     const t = setInterval(() => setCurrent(p => (p + 1) % total), 6000);
     return () => clearInterval(t);
@@ -119,45 +116,46 @@ export default function Testimonials() {
   return (
     <section className="relative w-full bg-[#f6f1e8] py-20 sm:py-28 overflow-hidden">
 
- {/* left red stripe */}
-      <div className="absolute left-0 top-0 h-full w-1 bg-[#BC002D]" />    
+      {/* left blue stripe */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-[#0877BA]" />
 
-      {/* Main Bg Watermark */}
+      {/* Watermarks */}
       <div
         className="absolute right-10 top-1/2 -translate-y-1/2 font-black text-[220px] select-none pointer-events-none hidden xl:block"
-        style={{ color: '#BC002D', opacity: 0.04, fontFamily: 'serif', lineHeight: 1 }}
+        style={{ color: '#0877BA', opacity: 0.04, fontFamily: "'Roboto', sans-serif", lineHeight: 1 }}
       >
         背
       </div>
-       <div
+      <div
         className="absolute left-10 top-1/2 -translate-y-1/2 font-black text-[220px] select-none pointer-events-none hidden xl:block"
-        style={{ color: '#BC002D', opacity: 0.04, fontFamily: 'serif', lineHeight: 1 }}
+        style={{ color: '#0877BA', opacity: 0.04, fontFamily: "'Roboto', sans-serif", lineHeight: 1 }}
       >
         景
       </div>
 
+      {/* sakura petals */}
             {[
               { left: '8%',  delay: 0   },
               { left: '22%', delay: 2   },
-              { left: '50%', delay: 2.5   },
+              { left: '50%', delay: 2.5 },
               { left: '72%', delay: 1.5 },
               { left: '88%', delay: 3   },
             ].map((p, i) => (
               <motion.div
                 key={i}
-                className="absolute top-0 text-xl pointer-events-none select-none"
+                className="absolute top-0 pointer-events-none select-none"
                 style={{ left: p.left }}
-                animate={{ y: [0, 300], opacity: [2, 0.5, 0], rotate: [0, 360] }}
-                transition={{ duration: 8, delay: p.delay, repeat: Infinity, ease: 'easeIn' }}
+                animate={{ y: [0, 300], opacity: [0, 0.8, 0], rotate: [0, 360] }}
+                transition={{ duration: 5, delay: p.delay, repeat: Infinity, ease: 'easeIn' }}
               >
-                🌸
+                <GiFlowerEmblem size={22} color="#0877BA" style={{ opacity: 0.8 }} />
+      
               </motion.div>
             ))}
-      
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 xl:px-16">
 
-        {/* HEADER*/}
+        {/* HEADER */}
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -165,26 +163,24 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
         >
-          {/* tag */}
           <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-[2px] bg-[#BC002D]" />
-            <span className="text-[11px] font-bold tracking-[0.18em] text-[#BC002D] uppercase">
+            <span className="w-8 h-[2px] bg-[#0877BA]" />
+            <span className="text-[11px] font-bold tracking-[0.18em] text-[#0877BA] uppercase" style={{ fontFamily: "'Roboto', sans-serif" }}>
               Student Feedback
             </span>
-            <span className="w-8 h-[2px] bg-[#BC002D]" />
+            <span className="w-8 h-[2px] bg-[#0877BA]" />
           </div>
 
           <h2
             className="font-black text-[#0A0A0A] leading-[1.08] tracking-tight"
-            style={{ fontSize: 'clamp(28px, 5vw, 52px)' }}
+            style={{ fontSize: 'clamp(28px, 5vw, 52px)', fontFamily: "'Roboto', sans-serif" }}
           >
             What Our Students Say About Us
           </h2>
 
-          {/* Japanese subtitle */}
           <div
             className="mt-2 text-[13px] tracking-widest font-medium"
-            style={{ color: 'rgba(0,0,0,0.2)', fontFamily: 'serif' }}
+            style={{ color: 'rgba(0,0,0,0.2)', fontFamily: "'Roboto', sans-serif" }}
           >
             学生の声
           </div>
@@ -211,12 +207,11 @@ export default function Testimonials() {
 
           <button
             onClick={prev}
-            className="w-9 h-9 border border-[#0A0A0A]/15 flex items-center justify-center text-[#0A0A0A] hover:bg-[#BC002D] hover:border-[#BC002D] hover:text-white transition-all duration-200"
+            className="w-9 h-9 border border-[#0A0A0A]/15 flex items-center justify-center text-[#0A0A0A] hover:bg-[#0877BA] hover:border-[#0877BA] hover:text-white transition-all duration-200"
           >
-            <ChevronLeft size={16} />
+            <FaChevronLeft size={14} />
           </button>
 
-          {/* dots */}
           <div className="flex items-center gap-2.5">
             {TESTIMONIALS.map((_, i) => (
               <button
@@ -227,13 +222,13 @@ export default function Testimonials() {
                 {current === i && (
                   <motion.span
                     layoutId="testimonial-dot"
-                    className="absolute inset-0 rounded-full border border-[#BC002D]"
+                    className="absolute inset-0 rounded-full border border-[#0877BA]"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <span
                   className="w-2 h-2 rounded-full transition-colors duration-200"
-                  style={{ background: current === i ? '#BC002D' : 'rgba(0,0,0,0.2)' }}
+                  style={{ background: current === i ? '#0877BA' : 'rgba(0,0,0,0.2)' }}
                 />
               </button>
             ))}
@@ -241,9 +236,9 @@ export default function Testimonials() {
 
           <button
             onClick={next}
-            className="w-9 h-9 bg-[#BC002D] flex items-center justify-center text-white hover:bg-[#0A0A0A] transition-all duration-200"
+            className="w-9 h-9 bg-[#0877BA] flex items-center justify-center text-white hover:bg-[#0A0A0A] transition-all duration-200"
           >
-            <ChevronRight size={16} />
+            <FaChevronRight size={14} />
           </button>
         </div>
 

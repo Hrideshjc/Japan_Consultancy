@@ -40,7 +40,7 @@ const steps = [
   },
 ]
 
-/* ── Single step card ── */
+/* Single step card */
 function StepItem({ step, index }) {
   const ref = React.useRef(null)
   const inView = useInView(ref, { once: true, amount: 0.4 })
@@ -54,7 +54,6 @@ function StepItem({ step, index }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
     >
-      
       {!isLast && (
         <div
           className="hidden md:block absolute top-8 left-1/2 w-full h-px z-0"
@@ -64,42 +63,40 @@ function StepItem({ step, index }) {
         />
       )}
 
-    
-      <div className="relative z-10 w-16 h-16 rounded-full bg-[#BC002D] flex items-center justify-center shadow-lg ring-4 ring-white/20 mb-4">
+      <div className="relative z-10 w-16 h-16 rounded-full bg-[#0877BA] flex items-center justify-center shadow-lg ring-4 ring-white/20 mb-4">
         <span
           className="text-white font-bold text-base"
-          style={{ fontFamily: "'Noto Serif JP', serif" }}
+          style={{ fontFamily: "'Roboto', sans-serif" }}
         >
           {step.Hiragana}
         </span>
       </div>
 
-      
       <div className="relative w-full rounded-sm p-4 text-center group
         bg-white/10 backdrop-blur-md border border-white/20
         hover:bg-white/20 hover:border-white/40 transition-all duration-300"
       >
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#BC002D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-sm" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#F6C21F] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-sm" />
 
         <div className="flex items-center justify-center gap-2 mb-1">
-          <span className="text-[#BC002D] text-xs font-bold tracking-widest">{step.number}</span>
+          <span className="text-[#F6C21F] text-xs font-bold tracking-widest" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.number}</span>
           <span className="text-white/30 text-xs">—</span>
-          <span className="text-white/60 text-xs" style={{ fontFamily: "'Noto Serif JP', serif" }}>{step.titleJa}</span>
+          <span className="text-white/60 text-xs" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.titleJa}</span>
         </div>
 
         <h3
           className="text-white font-bold mb-2"
-          style={{ fontFamily: "'Noto Serif JP', serif", fontSize: '1.05rem' }}
+          style={{ fontFamily: "'Roboto', sans-serif", fontSize: '1.05rem' }}
         >
           {step.title}
         </h3>
-        <p className="text-white/70 text-xs leading-relaxed">{step.description}</p>
+        <p className="text-white/70 text-xs leading-relaxed" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.description}</p>
       </div>
     </motion.div>
   )
 }
 
-/* ── Main section ── */
+/* Main section */
 export default function ProcessTimeline() {
   return (
     <>
@@ -107,7 +104,7 @@ export default function ProcessTimeline() {
         className="relative py-24 overflow-hidden"
         style={{
           backgroundImage: `url(${bgImage})`,
-          backgroundAttachment: 'fixed', 
+          backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -115,37 +112,35 @@ export default function ProcessTimeline() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/55" />
 
-      
-
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-6xl px-6">
 
           {/* Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#BC002D]" />
-              <p className="text-[#BC002D] text-xs font-bold tracking-[0.2em] uppercase">手続きの流れ</p>
-              <div className="h-px w-8 bg-[#BC002D]" />
+              <div className="h-px w-8 bg-[#0877BA]" />
+              <p className="text-[#0877BA] text-xs font-bold tracking-[0.2em] uppercase" style={{ fontFamily: "'Roboto', sans-serif" }}>手続きの流れ</p>
+              <div className="h-px w-8 bg-[#0877BA]" />
             </div>
             <h2
               className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4"
-              style={{ fontFamily: "'Noto Serif JP', serif" }}
+              style={{ fontFamily: "'Roboto', sans-serif" }}
             >
               Your Path to Japan
             </h2>
-            <p className="text-white/60 text-base max-w-md mx-auto">
+            <p className="text-white/60 text-base max-w-md mx-auto" style={{ fontFamily: "'Roboto', sans-serif" }}>
               Five clear steps from your first inquiry to your arrival in Japan.
             </p>
           </div>
 
-          
+          {/* Desktop */}
           <div className="hidden md:flex flex-row items-start gap-4">
             {steps.map((step, i) => (
               <StepItem key={step.number} step={step} index={i} />
             ))}
           </div>
 
-          
+          {/* Mobile */}
           <div className="md:hidden relative flex flex-col gap-6">
             <div
               className="absolute left-8 top-0 bottom-0 w-px"
@@ -165,21 +160,21 @@ export default function ProcessTimeline() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
                 >
-                  <div className="absolute left-0 top-3 w-12 h-12 rounded-full bg-[#BC002D] flex items-center justify-center ring-4 ring-white/20 z-10">
-                    <span className="text-white text-xs font-bold" style={{ fontFamily: "'Noto Serif JP', serif" }}>
-                      {step.kanji}
+                  <div className="absolute left-0 top-3 w-12 h-12 rounded-full bg-[#0877BA] flex items-center justify-center ring-4 ring-white/20 z-10">
+                    <span className="text-white text-xs font-bold" style={{ fontFamily: "'Roboto', sans-serif" }}>
+                      {step.Hiragana}
                     </span>
                   </div>
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-sm p-4 hover:bg-white/20 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[#BC002D] text-xs font-bold tracking-widest">{step.number}</span>
+                      <span className="text-[#F6C21F] text-xs font-bold tracking-widest" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.number}</span>
                       <span className="text-white/30 text-xs">—</span>
-                      <span className="text-white/60 text-xs" style={{ fontFamily: "'Noto Serif JP', serif" }}>{step.titleJa}</span>
+                      <span className="text-white/60 text-xs" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.titleJa}</span>
                     </div>
-                    <h3 className="text-white font-bold mb-1" style={{ fontFamily: "'Noto Serif JP', serif", fontSize: '1.05rem' }}>
+                    <h3 className="text-white font-bold mb-1" style={{ fontFamily: "'Roboto', sans-serif", fontSize: '1.05rem' }}>
                       {step.title}
                     </h3>
-                    <p className="text-white/70 text-xs leading-relaxed">{step.description}</p>
+                    <p className="text-white/70 text-xs leading-relaxed" style={{ fontFamily: "'Roboto', sans-serif" }}>{step.description}</p>
                   </div>
                 </motion.div>
               )
