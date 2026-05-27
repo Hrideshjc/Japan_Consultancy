@@ -1,118 +1,118 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { MdOutlineBusinessCenter, MdOutlineCampaign, MdOutlineTrendingUp, MdOutlineLightbulb, MdOutlineAccountBalance, MdOutlineAccountTree } from 'react-icons/md'
+import { HiArrowRight } from 'react-icons/hi'
+import { TbGridDots } from 'react-icons/tb'
 
 const services = [
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-      </svg>
-    ),
-    title: 'Business Planning',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
+    icon: <MdOutlineBusinessCenter className="w-7 h-7" />,
+    title: 'University Placement',
+    description: 'We match you with the right Japanese university — from Tokyo to Kyoto — based on your academic background, goals, and budget.',
   },
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6-6 3 3-6 6H9v-3z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 17.25V21h3.75l9.06-9.06-3.75-3.75L3 17.25z" />
-      </svg>
-    ),
-    title: 'Sales & Marketing',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
+    icon: <MdOutlineCampaign className="w-7 h-7" />,
+    title: 'JLPT Preparation',
+    description: 'Structured coaching for JLPT N5 to N2 levels, helping you meet language requirements and thrive in a Japanese academic environment.',
   },
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: 'Drive Revenue Growth',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
-  }, 
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-      </svg>
-    ),
-    title: 'Business Strategy',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
+    icon: <MdOutlineTrendingUp className="w-7 h-7" />,
+    title: 'Scholarship Guidance',
+    description: 'We identify scholarships you qualify for — MEXT, JASSO, and university grants — and guide you through every step of the application.',
   },
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
-      </svg>
-    ),
-    title: 'Financial Advices',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
+    icon: <MdOutlineLightbulb className="w-7 h-7" />,
+    title: 'Visa Assistance',
+    description: 'Our consultants handle your student visa documentation end-to-end, with a 98% approval rate across hundreds of successful applications.',
   },
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" />
-      </svg>
-    ),
-    title: 'Operating Model Design',
-    description: 'Lorem ipsum dolor sit amet consectetur in congue enim vitae pretium porttitor.',
+    icon: <MdOutlineAccountBalance className="w-7 h-7" />,
+    title: 'Accommodation Support',
+    description: 'From dormitories to private apartments, we help you find safe and affordable housing near your campus before you even arrive.',
   },
-]
-
-const petals = [
-  { left: '8%',  delay: 0   },
-  { left: '22%', delay: 2   },
-  { left: '50%', delay: 2.5 },
-  { left: '72%', delay: 1.5 },
-  { left: '88%', delay: 3   },
+  {
+    icon: <MdOutlineAccountTree className="w-7 h-7" />,
+    title: 'Career Counselling',
+    description: 'Post-graduation support to help you navigate Japan\'s job market — resume building, interview prep, and connecting with top employers.',
+  },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 bg-white overflow-hidden">
-
-      
+    <section id="services" className="relative py-20 bg-white overflow-hidden" style={{ fontFamily: "'Roboto', sans-serif" }}>
 
       <div className="mx-auto max-w-5xl px-6">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#BC002D] text-sm font-semibold tracking-widest uppercase mb-3">
-            ---- サービス内容 ----
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-            Explore our wide<br className="hidden sm:block" /> range of services
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-[#0877BA]" />
+            <div className="flex items-center gap-1.5">
+              <TbGridDots size={13} className="text-[#0877BA]" />
+              <p className="text-[#0877BA] text-xs font-bold tracking-[0.2em] uppercase" style={{ fontFamily: "'Roboto', sans-serif" }}>
+                Our Services
+              </p>
+              <TbGridDots size={13} className="text-[#0877BA]" />
+            </div>
+            <div className="h-px w-8 bg-[#0877BA]" />
+          </div>
+
+          <h2
+            className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight"
+            style={{ fontFamily: "'Roboto', sans-serif" }}
+          >
+            Everything you need to<br className="hidden sm:block" /> study in Japan
           </h2>
+
+          {/* yellow accent underline */}
+          <div className="mt-4 mx-auto w-16 h-1 bg-[#F6C21F] rounded-full" />
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mb-14">
           {services.map((service) => (
-            <div key={service.title} className="flex flex-col gap-3">
-              <div className="text-[#BC002D]">
+            <motion.div
+              key={service.title}
+              className="group flex flex-col gap-3 p-5 border border-transparent hover:border-[#0877BA]/20 hover:shadow-md transition-all duration-300 rounded-sm relative"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+            >
+              {/* yellow top accent on hover */}
+              <span className="absolute top-0 left-0 h-[3px] w-0 bg-[#F6C21F] group-hover:w-full transition-all duration-300 rounded-t-sm" />
+
+              <div className="w-12 h-12 rounded-sm bg-[#0877BA]/10 flex items-center justify-center text-[#0877BA] group-hover:bg-[#0877BA] group-hover:text-white transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900">
+
+              <h3 className="text-lg font-bold text-slate-900" style={{ fontFamily: "'Roboto', sans-serif" }}>
                 {service.title}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-500 text-sm leading-relaxed" style={{ fontFamily: "'Roboto', sans-serif" }}>
                 {service.description}
               </p>
-            </div>
+
+              <div className="flex items-center gap-1 text-[#0877BA] text-xs font-semibold mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "'Roboto', sans-serif" }}>
+                Learn more <HiArrowRight size={13} />
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-2 bg-[#BC002D] hover:bg-[#BC002D] active:bg-[#BC002D] text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200">
+          <button
+            className="flex items-center gap-2 bg-[#0877BA] hover:bg-[#065f99] text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+            style={{ fontFamily: "'Roboto', sans-serif" }}
+          >
             GET A QUOTE
-            <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-[#BC002D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
+            <span className="flex items-center justify-center w-6 h-6 bg-[#F6C21F] rounded-full">
+              <HiArrowRight className="w-3.5 h-3.5 text-white" />
             </span>
           </button>
-          <button className="text-slate-800 hover:text-[#BC002D] border border-slate-300 hover:border-[#BC002D] text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200">
+          <button
+            className="text-slate-800 hover:text-[#0877BA] border border-slate-300 hover:border-[#0877BA] text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200"
+            style={{ fontFamily: "'Roboto', sans-serif" }}
+          >
             BROWSE ALL SERVICES
           </button>
         </div>
