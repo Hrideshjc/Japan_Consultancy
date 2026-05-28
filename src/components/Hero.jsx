@@ -93,7 +93,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* falling petals */}
+      {/* Sakura petals */}
       {[
         { left: '8%',  delay: 0   },
         { left: '22%', delay: 2   },
