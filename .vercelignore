@@ -1,0 +1,40 @@
+# Dependencies
+
+node_modules/
+
+# Build files
+
+dist/
+\*.log
+
+# Development
+
+.git/
+.gitignore
+.DS_Store
+.env.local
+.env.\*.local
+
+# Editor
+
+.vscode/
+.idea/
+_.swp
+_.swo
+
+# Testing
+
+coverage/
+.nyc_output/
+
+# Documentation
+
+README.md
+CHANGELOG.md
+LICENSE
+
+# CI/CD
+
+.github/
+.gitlab-ci.yml
+.circleci/
