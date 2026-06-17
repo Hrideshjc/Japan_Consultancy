@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from './services/Hero';
-import StudyInJapan from './services/StudyInJapan';
+import StudyInJapan from './services/studyinjapan';
 import VisaAssistanceSection from './services/visaassistancesection';
 import LanguageClassesSection from './services/languageclassessection';
 import DocumentationSupportSection from './services/documentationsupportsection';
