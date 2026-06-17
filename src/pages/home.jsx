@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Hero from './home/Hero';
-import Aboutus from './home/Aboutus';
-import WhyJapan from './home/WhyJapan';
-import Services from './home/Services';
-import StudyPrograms from './home/StudyPrograms';
-import ProcessTimeline from './home/ProcessTimeline';
-import Testimonials from './home/Testimonials';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+import Hero from './home/Hero.jsx';
+import Aboutus from './home/Aboutus.jsx';
+import WhyJapan from './home/WhyJapan.jsx';
+import Services from './home/Services.jsx';
+import StudyPrograms from './home/StudyPrograms.jsx';
+import ProcessTimeline from './home/ProcessTimeline.jsx';
+import Testimonials from './home/Testimonials.jsx';
 
 export default function Home () {
     return(
