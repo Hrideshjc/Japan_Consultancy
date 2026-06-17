@@ -14,7 +14,7 @@ export default function Home () {
             <Navbar />
             <main>
                 <HomeHero />
-                <Aboutus />
+                <AboutUs />
                 <WhyJapan />
                 <Services />
                 <StudyPrograms />

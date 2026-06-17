@@ -49,7 +49,7 @@ const SLIDES = [
   },
 ];
 
-export default function Hero() {
+export default function HomeHero() {
   const [current,  setCurrent]  = useState(0);
   const [progress, setProgress] = useState(0);
   const DURATION = 6000;
