@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight, FaPlay, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { GiFlowerEmblem } from 'react-icons/gi';
 
-import person1 from '../assets/banner-img1.png';
-import person2 from '../assets/banner-img2.png';
-import person3 from '../assets/banner-img2.png';
-import bgimage from '../assets/bgimage.png';
+import person1 from '../../assets/banner-img1.png';
+import person2 from '../../assets/banner-img2.png';
+import person3 from '../../assets/banner-img2.png';
+import bgimage from '../../assets/bgimage.png';
 
 const ROBOTO = { fontFamily: "'Roboto', sans-serif" };
 

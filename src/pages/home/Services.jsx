@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MdOutlineBusinessCenter, MdOutlineCampaign, MdOutlineTrendingUp, MdOutlineLightbulb, MdOutlineAccountBalance, MdOutlineAccountTree } from 'react-icons/md'
 import { HiArrowRight } from 'react-icons/hi'
@@ -38,6 +39,12 @@ const services = [
 ]
 
 export default function Services() {
+  const navigate = useNavigate()
+
+  const handleBrowseServices = () => {
+    navigate('/services')
+  }
+
   return (
     <section id="services" className="relative py-20 bg-white overflow-hidden" style={{ fontFamily: "'Roboto', sans-serif" }}>
 
@@ -110,6 +117,7 @@ export default function Services() {
             </span>
           </button>
           <button
+            onClick={handleBrowseServices}
             className="text-slate-800 hover:text-[#0877BA] border border-slate-300 hover:border-[#0877BA] text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200"
             style={{ fontFamily: "'Roboto', sans-serif" }}
           >

@@ -1,7 +1,7 @@
-import { FaGraduationCap, FaMapMarkerAlt, FaEnvelope, FaPhone, FaArrowUp } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FaGraduationCap, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FiArrowUpRight } from 'react-icons/fi';
 
-import footerBg from "../assets/footer.jpg";
+import footerBg from '../assets/footer.jpg';
 
 const NavCol = ({ title, links }) => (
   <div className="flex flex-col gap-3">
@@ -22,7 +22,7 @@ const NavCol = ({ title, links }) => (
   </div>
 );
 
-export default function KizunaFooter() {
+export default function Footer() {
   return (
     <footer
       style={{ fontFamily: "'Roboto', sans-serif" }}

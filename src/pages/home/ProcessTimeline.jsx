@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, useInView } from 'framer-motion'
-import bgImage from '../assets/japan-main.jpg';
+import bgImage from '../../assets/japan-main.jpg';
 
 const steps = [
   {

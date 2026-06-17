@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FaPhone, FaEnvelope, FaGlobe, FaChevronDown,
@@ -12,21 +13,30 @@ const YELLOW = '#F6C21F';
 const BLACK  = '#0A0A0A';
 
 const NAV_LINKS = [
-  { name: 'Home',            hasDropdown: true  },
+  { name: 'Home',            hasDropdown: false  },
   { name: 'About Us',        hasDropdown: false },
-  { name: 'Services',        hasDropdown: true  },
+  { name: 'Services',        hasDropdown: false  },
   { name: 'Study Programs',  hasDropdown: true  },
   { name: 'Success Stories', hasDropdown: false },
   { name: 'Contact Us',      hasDropdown: false },
 ];
 
 const DROPDOWNS = {
-  'Home':           ['Landing Page', 'About Preview'],
-  'Services':       ['Visa Guidance', 'University Matching', 'Language Support', 'Career Counselling'],
+  
   'Study Programs': ['Undergraduate', 'Postgraduate', 'Language Schools', 'Vocational Training'],
 };
 
+const PAGE_LINKS = {
+  'Home': '/',
+  'About Us': '/about',
+  'Services': '/services',
+  'Study Programs': '/study-programs',
+  'Success Stories': '/success-stories',
+  'Contact Us': '/contact',
+};
+
 export default function Navbar() {
+  const location = useLocation();
   const [scrolled,   setScrolled]   = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDD,   setActiveDD]   = useState(null);
@@ -149,25 +159,44 @@ export default function Navbar() {
                   onMouseEnter={() => link.hasDropdown && setActiveDD(link.name)}
                   onMouseLeave={() => setActiveDD(null)}
                 >
-                  <button className="relative flex items-center gap-1 px-3 py-2 text-[13.5px] font-semibold text-[#0A0A0A] transition-colors duration-200 group"
-                    style={{ fontFamily: "'Roboto', sans-serif" }}
-                    onMouseEnter={e => e.currentTarget.style.color = BLUE}
-                    onMouseLeave={e => e.currentTarget.style.color = BLACK}
-                  >
-                    {link.name}
-                    {link.hasDropdown && (
-                      <FaChevronDown
-                        size={10}
-                        className="transition-transform duration-200"
-                        style={{ transform: activeDD === link.name ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  {PAGE_LINKS[link.name] ? (
+                    <Link
+                      to={PAGE_LINKS[link.name]}
+                      className="relative flex items-center gap-1 px-3 py-2 text-[13.5px] font-semibold text-[#0A0A0A] transition-colors duration-200 group"
+                      style={{ fontFamily: "'Roboto', sans-serif", color: location.pathname === PAGE_LINKS[link.name] ? BLUE : '#0A0A0A' }}
+                      onMouseEnter={e => e.currentTarget.style.color = BLUE}
+                      onMouseLeave={e => e.currentTarget.style.color = location.pathname === PAGE_LINKS[link.name] ? BLUE : '#0A0A0A'}
+                    >
+                      {link.name}
+                      <span
+                        className="absolute bottom-0 left-3 right-3 h-[2px] transition-transform duration-300 origin-left group-hover:scale-x-100"
+                        style={{ 
+                          background: BLUE,
+                          transform: location.pathname === PAGE_LINKS[link.name] ? 'scaleX(1)' : 'scaleX(0)',
+                        }}
                       />
-                    )}
-                    {/* underline */}
-                    <span
-                      className="absolute bottom-0 left-3 right-3 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                      style={{ background: BLUE }}
-                    />
-                  </button>
+                    </Link>
+                  ) : (
+                    <button className="relative flex items-center gap-1 px-3 py-2 text-[13.5px] font-semibold text-[#0A0A0A] transition-colors duration-200 group"
+                      style={{ fontFamily: "'Roboto', sans-serif" }}
+                      onMouseEnter={e => e.currentTarget.style.color = BLUE}
+                      onMouseLeave={e => e.currentTarget.style.color = BLACK}
+                    >
+                      {link.name}
+                      {link.hasDropdown && (
+                        <FaChevronDown
+                          size={10}
+                          className="transition-transform duration-200"
+                          style={{ transform: activeDD === link.name ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                        />
+                      )}
+                      {/* underline */}
+                      <span
+                        className="absolute bottom-0 left-3 right-3 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                        style={{ background: BLUE }}
+                      />
+                    </button>
+                  )}
 
                   {/* DROPDOWN */}
                   <AnimatePresence>
@@ -300,21 +329,46 @@ export default function Navbar() {
               {/* links */}
               <div className="flex-1 px-8 py-6 flex flex-col overflow-y-auto">
                 {NAV_LINKS.map((link, i) => (
-                  <motion.a
-                    key={link.name}
-                    href={`#${link.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    onClick={() => setMobileOpen(false)}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex justify-between items-center py-4 text-white text-[17px] font-semibold transition-colors"
-                    style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', fontFamily: "'Roboto', sans-serif" }}
-                    onMouseEnter={e => e.currentTarget.style.color = YELLOW}
-                    onMouseLeave={e => e.currentTarget.style.color = 'white'}
-                  >
-                    {link.name}
-                    <FaArrowRight size={13} className="text-gray-600" />
-                  </motion.a>
+                  PAGE_LINKS[link.name] ? (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex justify-between items-center py-4 text-white text-[17px] font-semibold transition-colors"
+                      style={{ 
+                        borderBottom: '1px solid rgba(255,255,255,0.07)', 
+                        fontFamily: "'Roboto', sans-serif",
+                        color: location.pathname === PAGE_LINKS[link.name] ? YELLOW : 'white',
+                      }}
+                    >
+                      <Link
+                        to={PAGE_LINKS[link.name]}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex-1"
+                        style={{ color: 'inherit', textDecoration: 'none' }}
+                      >
+                        {link.name}
+                      </Link>
+                      <FaArrowRight size={13} className={location.pathname === PAGE_LINKS[link.name] ? 'text-yellow-400' : 'text-gray-600'} />
+                    </motion.div>
+                  ) : (
+                    <motion.a
+                      key={link.name}
+                      href={`#${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      onClick={() => setMobileOpen(false)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className="flex justify-between items-center py-4 text-white text-[17px] font-semibold transition-colors"
+                      style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', fontFamily: "'Roboto', sans-serif" }}
+                      onMouseEnter={e => e.currentTarget.style.color = YELLOW}
+                      onMouseLeave={e => e.currentTarget.style.color = 'white'}
+                    >
+                      {link.name}
+                      <FaArrowRight size={13} className="text-gray-600" />
+                    </motion.a>
+                  )
                 ))}
               </div>
 

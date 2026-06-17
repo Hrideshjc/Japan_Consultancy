@@ -8,7 +8,7 @@ import {
   FaShieldAlt,
   FaHandshake,
 } from 'react-icons/fa';
-import buildingImage from '../assets/building3.e65c53192f3abf78.png';
+import buildingImage from '../../assets/building3.e65c53192f3abf78.png';
 
 const REASONS = [
   {
@@ -50,20 +50,20 @@ const STATS = [
   { num: '15+',  label: 'Years Experience'    },
 ];
 
-export default function WhyJapan() {
+export default function StudyInJapan() {
   return (
     <section
-      className="relative w-full bg-[#f6f1e8] py-20 sm:py-28 overflow-hidden"
+      className="relative w-full bg-[#ffffff] py-20 sm:py-28 overflow-hidden"
       style={{ fontFamily: "'Roboto', sans-serif" }}
     >
 
-      {/* left red stripe */}
+      {/* left blue stripe */}
       <div className="absolute left-0 top-0 h-full w-1 bg-[#0877BA]" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 xl:px-16">
+      <div className="max-w-7xl mx-auto px-4 xs:px-5 sm:px-10 xl:px-16">
 
         {/* HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 sm:mb-16">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ export default function WhyJapan() {
 
             <h2
               className="font-black text-[#0A0A0A] leading-[1.08] tracking-tight"
-              style={{ fontSize: 'clamp(32px, 5vw, 54px)', fontFamily: "'Roboto', sans-serif" }}
+              style={{ fontSize: 'clamp(28px, 5vw, 54px)', fontFamily: "'Roboto', sans-serif" }}
             >
               Japan Gives You More <br className="hidden sm:block" />
               Than Just a Degree
@@ -104,7 +104,7 @@ export default function WhyJapan() {
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {REASONS.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -115,13 +115,13 @@ export default function WhyJapan() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group relative bg-white border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 cursor-default"
+                className="group relative bg-[#f6f1e8] border-gray-100 p-5 sm:p-8 hover:shadow-xl transition-all duration-300 cursor-default"
               >
                 {/* yellow top line slides in on hover */}
                 <span className="absolute top-0 left-0 h-[3px] w-0 bg-[#F6C21F] group-hover:w-full transition-all duration-300" />
 
                 {/* icon box */}
-                <div className="w-12 h-12 flex items-center justify-center bg-[#FAF8F4] group-hover:bg-[#0877BA] transition-colors duration-300 mb-5">
+                <div className="w-12 h-12 flex items-center justify-center bg-[#ffffff] group-hover:bg-[#0877BA] transition-colors duration-300 mb-5">
                   <Icon
                     size={21}
                     className="text-[#0877BA] group-hover:text-white transition-colors duration-300"
@@ -156,13 +156,13 @@ export default function WhyJapan() {
           })}
         </div>
 
-        <div className="pt-8 w-full">
+        <div className="pt-6 sm:pt-8 w-full">
           <div className="relative z-10 w-full h-[2px] bg-gradient-to-r from-[#0877BA]/0 via-[#0877BA]/60 to-[#0877BA]/0" />
         </div>
 
         {/* STATS */}
         <motion.div
-          className="mt-14 grid grid-cols-2 sm:grid-cols-4 border border-gray-100"
+          className="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 border border-gray-100"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -171,16 +171,16 @@ export default function WhyJapan() {
           {STATS.map((stat, i) => (
             <div
               key={stat.label}
-              className="flex flex-col items-center justify-center py-8 px-4 border-r border-gray-100 last:border-r-0 sm:[&:nth-child(2)]:border-r sm:[&:nth-child(4)]:border-r-0 text-center"
+              className="flex flex-col items-center justify-center py-6 sm:py-8 px-3 sm:px-4 border-r border-gray-100 last:border-r-0 sm:[&:nth-child(2)]:border-r sm:[&:nth-child(4)]:border-r-0 text-center"
             >
               <span
-                className="text-[34px] sm:text-[40px] font-black text-[#F6C21F] leading-none"
+                className="text-[28px] xs:text-[32px] sm:text-[40px] font-black text-[#F6C21F] leading-none"
                 style={{ fontFamily: "'Roboto', sans-serif" }}
               >
                 {stat.num}
               </span>
               <span
-                className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-2"
+                className="text-[10px] xs:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-2"
                 style={{ fontFamily: "'Roboto', sans-serif" }}
               >
                 {stat.label}

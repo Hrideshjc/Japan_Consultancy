@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaClock, FaCalendarAlt, FaComments, FaYenSign } from 'react-icons/fa'
 import { GiFlowerEmblem } from 'react-icons/gi';
 
-import undergraduate from '../assets/undergraduate.jpg';
-import Female from '../assets/female.webp';
-import language from '../assets/language.jpg';
-import IdeaCollege from '../assets/IdeaCollege.jpg';
+import undergraduate from '../../assets/undergraduate.jpg';
+import Female from '../../assets/female.webp';
+import language from '../../assets/language.jpg';
+import IdeaCollege from '../../assets/IdeaCollege.jpg';
 
 const programs = [
   {
