@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx';
-import Hero from './about/Hero.jsx';
-import AboutSection from './about/Aboutsection.jsx';
-import GrowSection from './about/Growsection.jsx';
-import HelpYou from './about/Helpyou.jsx';
-import Experts from './about/Experts.jsx';
-import Testimonials from './about/Testimonials.jsx';
-import Newsletter from './about/Newsletter.jsx';
+import Navbar from '../layouts/Navbar.jsx';
+import Footer from '../layouts/Footer.jsx';
+import Hero from '../components/about/AboutHero.jsx';
+import AboutSection from '../components/about/Aboutsection.jsx';
+import GrowSection from '../components/about/Growsection.jsx';
+import HelpYou from '../components/about/Helpyou.jsx';
+import Experts from '../components/about/Experts.jsx';
+import Testimonials from '../components/home/Testimonials.jsx';
+import Newsletter from '../components/about/Newsletter.jsx';
 
 export default function AboutPage () {
     return(
