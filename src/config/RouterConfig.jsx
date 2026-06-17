@@ -1,5 +1,5 @@
-import AboutPage from "../pages/about";
-import ServicesPage from "../pages/services";
+import AboutPage from "../pages/About";
+import ServicesPage from "../pages/Services";
 
 const router = createBrowserRouter([
   { path: "/about", element: <AboutPage /> },
