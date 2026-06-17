@@ -1,6 +1,6 @@
 import Navbar from '../layouts/Navbar.jsx';
 import Footer from '../layouts/Footer.jsx';
-import Hero from '../components/about/AboutHero.jsx';
+import AboutHero from '../components/about/AboutHero.jsx';
 import AboutSection from '../components/about/Aboutsection.jsx';
 import GrowSection from '../components/about/Growsection.jsx';
 import HelpYou from '../components/about/Helpyou.jsx';
@@ -13,7 +13,7 @@ export default function AboutPage () {
         <div className="min-h-screen bg-[#FDFBF7] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
             <Navbar />
             <main>
-                <Hero />
+                <AboutHero />
                 <AboutSection />
                 <GrowSection />
                 <HelpYou />

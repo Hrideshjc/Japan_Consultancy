@@ -1,6 +1,6 @@
 import Navbar from '../layouts/Navbar.jsx';
 import Footer from '../layouts/Footer.jsx';
-import Hero from '../components/home/HomeHero.jsx';
+import HomeHero from '../components/home/HomeHero.jsx';
 import Aboutus from '../components/home/Aboutus.jsx';
 import WhyJapan from '../components/home/WhyJapan.jsx';
 import Services from '../components/home/Services.jsx';
@@ -13,7 +13,7 @@ export default function Home () {
         <div className="min-h-screen bg-[#FDFBF7] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
             <Navbar />
             <main>
-                <Hero />
+                <HomeHero />
                 <Aboutus />
                 <WhyJapan />
                 <Services />

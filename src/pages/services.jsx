@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import Navbar from '../layouts/Navbar.jsx';
 import Footer from '../layouts/Footer.jsx';
-import Hero from '../components/services/ServiceHero.jsx';
+import ServiceHero from '../components/services/ServiceHero.jsx';
 import StudyInJapan from '../components/services/Studyinjapan.jsx';
-import VisaAssistanceSection from '../components/services/Visaassistancesection.jsx';
-import LanguageClassesSection from '../components/services/Languageclassessection.jsx';
-import DocumentationSupportSection from '../components/services/Documentationsupportsection.jsx';
-import ArrivalSupportSection from '../components/services/Arrivalsupportsection.jsx';
+import VisaSection from '../components/services/VisaSection.jsx';
+import LanguageSection from '../components/services/LanguageSection.jsx';
+import DocumentationSection from '../components/services/DocumentationSection.jsx';
+import ArrivalSection from '../components/services/ArrivalSection.jsx';
 
 
 export default function ServicesPage() {
@@ -17,12 +17,12 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-[#ffffff] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
       <Navbar />
       <main>
-        <Hero />
+        <ServiceHero />
         <StudyInJapan />
-        <VisaAssistanceSection />
-        <LanguageClassesSection />
-        <DocumentationSupportSection />
-        <ArrivalSupportSection />
+        <VisaSection /> 
+        <LanguageSection />
+        <DocumentationSection />
+        <ArrivalSection />
       </main>
       <Footer />
     </div>
