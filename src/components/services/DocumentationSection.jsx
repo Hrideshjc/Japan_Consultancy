@@ -120,7 +120,7 @@ function AccordionItem({ doc, isOpen, onClick, index }) {
   );
 }
 
-export default function DocumentationSupportSection() {
+export default function DocumentationSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (

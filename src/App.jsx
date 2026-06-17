@@ -6,24 +6,11 @@ import ServicesPage from './pages/Services.jsx';
 
 export default function App() {
   return (
-    // <div className="min-h-screen bg-[#FDFBF7] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
-    //   <Navbar />
-    //   <main>
-    //     <Hero />
-    //     <Aboutus />
-    //     <WhyJapan />
-    //     <Services />
-    //     <StudyPrograms />
-    //     <ProcessTimeline />
-    //     <Testimonials />
-    //   </main>
-    //   <Footer />
-    // </div>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/About" element={<AboutPage/>} />
-        <Route path="/Services" element={<ServicesPage/>} />
+        <Route path="/about" element={<AboutPage/>} />
+        <Route path="/services" element={<ServicesPage/>} />
       </Routes>
     </BrowserRouter>
   );

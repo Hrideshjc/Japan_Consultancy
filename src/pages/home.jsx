@@ -3,7 +3,7 @@ import Footer from '../layouts/Footer.jsx';
 import HomeHero from '../components/home/HomeHero.jsx';
 import Aboutus from '../components/home/Aboutus.jsx';
 import WhyJapan from '../components/home/WhyJapan.jsx';
-import Services from '../components/home/Services.jsx';
+import Services from '../components/home/HomeServices.jsx';
 import StudyPrograms from '../components/home/StudyPrograms.jsx';
 import ProcessTimeline from '../components/home/ProcessTimeline.jsx';
 import Testimonials from '../components/home/Testimonials.jsx';

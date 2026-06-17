@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Navbar from '../layouts/Navbar.jsx';
 import Footer from '../layouts/Footer.jsx';
-import ServiceHero from '../components/services/ServiceHero.jsx';
+import ServicesHero from '../components/services/ServicesHero.jsx';
 import StudyInJapan from '../components/services/Studyinjapan.jsx';
 import VisaSection from '../components/services/VisaSection.jsx';
 import LanguageSection from '../components/services/LanguageSection.jsx';
@@ -17,7 +17,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-[#ffffff] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
       <Navbar />
       <main>
-        <ServiceHero />
+        <ServicesHero />
         <StudyInJapan />
         <VisaSection /> 
         <LanguageSection />

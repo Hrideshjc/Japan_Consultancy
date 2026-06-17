@@ -4,9 +4,9 @@ import AboutHero from '../components/about/AboutHero.jsx';
 import AboutSection from '../components/about/Aboutsection.jsx';
 import GrowSection from '../components/about/Growsection.jsx';
 import HelpYou from '../components/about/Helpyou.jsx';
-import Experts from '../components/about/Experts.jsx';
+import TeamSection from '../components/about/TeamSection.jsx';
 import Testimonials from '../components/home/Testimonials.jsx';
-import Newsletter from '../components/about/Newsletter.jsx';
+import NewsletterSection from '../components/about/Newsletter.jsx';
 
 export default function AboutPage () {
     return(
@@ -17,9 +17,9 @@ export default function AboutPage () {
                 <AboutSection />
                 <GrowSection />
                 <HelpYou />
-                <Experts />
+                <TeamSection />
                 <Testimonials />
-                <Newsletter />
+                <NewsletterSection />
             </main>
             <Footer />
         </div>

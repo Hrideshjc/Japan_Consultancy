@@ -43,7 +43,7 @@ const LEVELS = [
   },
 ];
 
-export default function LanguageClassesSection() {
+export default function LanguageSection() {
   return (
     <section className="relative w-full bg-white py-12 sm:py-24 overflow-hidden" style={ROBOTO}>
       {/* left blue stripe */}

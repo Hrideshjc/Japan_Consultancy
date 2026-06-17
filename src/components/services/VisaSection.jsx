@@ -89,7 +89,7 @@ function StepItem({ step, index }) {
   );
 }
 
-export default function VisaAssistanceTimeline() {
+export default function VisaSection() {
   return (
     <section 
       className="relative py-24 overflow-hidden" 

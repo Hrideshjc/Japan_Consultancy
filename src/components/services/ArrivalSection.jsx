@@ -19,7 +19,7 @@ const SERVICES = [
   },
 ];
 
-export default function ArrivalSupportSection() {
+export default function ArrivalSection() {
   return (
     <section className="relative w-full bg-[#f6f1e8] py-12 sm:py-24 overflow-hidden" style={ROBOTO}>
       {/* left blue stripe */}
