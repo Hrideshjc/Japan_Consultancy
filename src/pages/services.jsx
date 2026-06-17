@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Hero from './Services/Hero';
-import StudyInJapan from './Services/Studyinjapan';
-import VisaAssistanceSection from './Services/Visaassistancesection';
-import LanguageClassesSection from './Services/Languageclassessection';
-import DocumentationSupportSection from './Services/Documentationsupportsection';
-import ArrivalSupportSection from './Services/Arrivalsupportsection';
+import Hero from './services/Hero';
+import StudyInJapan from './services/Studyinjapan';
+import VisaAssistanceSection from './services/Visaassistancesection';
+import LanguageClassesSection from './services/Languageclassessection';
+import DocumentationSupportSection from './services/Documentationsupportsection';
+import ArrivalSupportSection from './services/Arrivalsupportsection';
 
 
 export default function ServicesPage() {
