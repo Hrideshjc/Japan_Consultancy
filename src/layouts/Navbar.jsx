@@ -261,7 +261,7 @@ export default function Navbar() {
               {/* hamburger */}
               <button
                 onClick={() => setMobileOpen(p => !p)}
-                className="p-2 transition-colors"
+                className="lg:hidden p-2 transition-colors"
                 style={{ color: BLACK }}
                 onMouseEnter={e => e.currentTarget.style.color = BLUE}
                 onMouseLeave={e => e.currentTarget.style.color = BLACK}
