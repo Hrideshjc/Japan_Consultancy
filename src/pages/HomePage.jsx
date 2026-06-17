@@ -8,7 +8,7 @@ import StudyPrograms from '../components/home/StudyPrograms.jsx';
 import ProcessTimeline from '../components/home/ProcessTimeline.jsx';
 import Testimonials from '../components/home/Testimonials.jsx';
 
-export default function Home () {
+export default function HomePage () {
     return(
         <div className="min-h-screen bg-[#FDFBF7] text-[#111111] font-serif antialiased selection:bg-[#BC002D] selection:text-white overflow-x-hidden">
             <Navbar />
