@@ -15,19 +15,23 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': [
-            'react',
-            'react-dom',
-            'react-router-dom',
-          ],
-          'animations': [
-            'framer-motion',
-          ],
-          'icons': [
-            'react-icons',
-          ],
-        },
+        manualChunks(id) {
+  if (id.includes('node_modules')) {
+    if (
+      id.includes('react-dom') ||
+      id.includes('react-router-dom') ||
+      id.includes('/react/')
+    ) {
+      return 'vendor';
+    }
+    if (id.includes('framer-motion')) {
+      return 'animations';
+    }
+    if (id.includes('react-icons')) {
+      return 'icons';
+    }
+  }
+},
       },
     },
     chunkSizeWarningLimit: 1000,
