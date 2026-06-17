@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Hero from './services/Hero';
+import Hero from './services/hero';
 import StudyInJapan from './services/studyinjapan';
 import VisaAssistanceSection from './services/visaassistancesection';
 import LanguageClassesSection from './services/languageclassessection';
