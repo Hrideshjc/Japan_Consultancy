@@ -31,9 +31,13 @@ export default function GrowSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
         >
-          <p className="text-[#0877BA] text-[11px] sm:text-[12px] font-bold tracking-[0.25em] uppercase mb-3">
-            Grow With Us
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-8 h-[2px] bg-[#0877BA]" />
+            <span className="text-[#0877BA] text-[11px] sm:text-[12px] font-bold tracking-[0.25em] uppercase">
+              Grow with Us
+            </span>
+            <span className="w-8 h-[2px] bg-[#0877BA]" />
+          </div>
 
           <h2 className="text-[28px] sm:text-[40px] lg:text-[46px] font-black text-[#0A0A0A] leading-tight mb-5">
             What can we help you achieve in Japan?
